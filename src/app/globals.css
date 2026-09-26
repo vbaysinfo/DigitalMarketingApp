@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --surface-2: #f1f3f9;
+  --border: #e3e6ef;
+  --text: #0f172a;
+  --muted: #5b6477;
+  --primary: #4f46e5;
+  --primary-fg: #ffffff;
+  --approve: #16a34a;
+  --approve-hover: #15803d;
+  --danger: #dc2626;
+  --ring: rgba(79, 70, 229, 0.35);
+}
+.dark {
+  --bg: #0b0f19;
+  --surface: #121829;
+  --surface-2: #192036;
+  --border: #253050;
+  --text: #e6e9f2;
+  --muted: #98a2b8;
+  --primary: #818cf8;
+  --primary-fg: #0b0f19;
+  --approve: #22c55e;
+  --approve-hover: #16a34a;
+  --danger: #f87171;
+  --ring: rgba(129, 140, 248, 0.4);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-primary-fg: var(--primary-fg);
+  --color-approve: var(--approve);
+  --color-approve-hover: var(--approve-hover);
+  --color-danger: var(--danger);
+  --font-sans: "Inter", "Noto Sans", "Noto Sans Telugu", "Noto Sans Devanagari", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+.input {
+  width: 100%;
+  border-radius: 0.6rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 0.55rem 0.75rem;
+  font-size: 0.875rem;
+  color: var(--text);
+}
+.input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--ring);
+}
+.label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.prose-chat p + p {
+  margin-top: 0.5rem;
+}
